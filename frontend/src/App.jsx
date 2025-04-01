@@ -25,6 +25,7 @@ const toastConfig = {
     boxShadow: "0 4px 12px rgba(123, 47, 255, 0.1)",
     backdropFilter: "blur(10px)",
     marginTop: "20px",
+    pointerEvents: "none",
   },
   className: "toast-message",
   iconTheme: {
@@ -227,10 +228,7 @@ const App = () => {
           savedCode: code,
         })
       );
-      toast.success(`Welcome to the room, ${userName}!`, {
-        ...toastConfig,
-        duration: 4000,
-      });
+      toast.success(`Welcome to the room, ${userName}!`, toastConfig);
     } else {
       toast.error("Please enter both Room ID and User Name", toastConfig);
     }
