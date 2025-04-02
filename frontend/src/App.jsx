@@ -123,6 +123,19 @@ const App = () => {
   const [isUsersSidebarOpen, setIsUsersSidebarOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+    // Ping server to keep it alive
+  useEffect(() => {
+    const pingServer = () => {
+      fetch('https://codeconnect-psa2.onrender.com')
+        .catch(err => console.error('Ping failed:', err));
+    };
+
+    const pingInterval = setInterval(pingServer, 840000); // 14 minutes (Render free tier sleeps after 15 minutes)
+    pingServer(); // Initial ping
+    
+    return () => clearInterval(pingInterval);
+  }, []);
+
   useEffect(() => {
     socket.on("userJoined", (users) => {
       setUsers(users);
