@@ -397,7 +397,7 @@ const App = () => {
             Developers
           </a>
           <a
-            href="#"
+            href="https://code-base-psi.vercel.app/snippets"
             className="join-codebase-btn"
             target="_blank"
             rel="noopener noreferrer"
@@ -639,7 +639,7 @@ const App = () => {
           </svg>
           <h1>CodeConnect</h1>
           <a
-            href="#"
+            href="https://code-base-psi.vercel.app/snippets"
             className="join-codebase-icon"
             target="_blank"
             rel="noopener noreferrer"
